@@ -1,14 +1,250 @@
-*  {
-  padding: 0;
+* {
   margin: 0;
+  padding: 0;
   box-sizing: border-box;
+  border: none;
 }
-
 
 :root {
   --text-base: #afb6c2;
-  --text-title: #d4ccb6;
+  --text-title:  #D4CCB6;
   --background: #191816;
   --form-background: #24221f;
   --primary-color: #ffc632;
+}
+
+html, body {
+  width: 100vw;
+  height: 100vw;
+
+  overflow: hidden;
+}
+
+main {
+  display: flex;
+  height: 100vh;
+}
+
+
+/* FORM & BACKGROUND */
+
+main .side {
+  flex-basis: 50%;
+
+  background-color: var(--background);
+}
+
+/* FORM */
+.side.left-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  overflow-y: auto;
+
+  flex-shrink: 1;
+  color: var(--text-base);
+}
+
+.side.left-form nav.logo-up {
+  width: 100%;
+  padding: 40px 40px 0;
+  cursor: pointer;
+}
+
+.side.left-form .form-container {
+  width: 570px;
+  max-width: 100%;
+
+  height: auto;
+
+  background-color: var(--form-background);
+  padding: 60px 80px 30px;
+  
+  border-radius: 5px;
+  box-shadow: 1px 1px 5px #0003;
+
+  margin-top: calc(10% - 40px);
+}
+
+.side.left-form .form-container .title-description img {
+  width: 24px;
+  vertical-align: text-top;
+  margin-right: 10px;
+}
+.side.left-form .form-container .title-description h3 {
+  display: inline-block;
+  font: 600 24px 'Poppins';
+  color: var(--text-title);
+
+  margin-bottom: 5px; 
+}
+.side.left-form .form-container .title-description p {
+  font: 500 16px 'Roboto';
+  margin-bottom: 27px;
+}
+
+.side.left-form .form-container label {
+  font: 500 16px 'Poppins';
+}
+
+.side.left-form .form-container a {
+  font: 600 14px 'Poppins';
+  color: var(--primary-color);
+  
+  text-decoration: none;
+}
+
+.side.left-form .board {
+  display: flex;
+  align-items: center;
+
+  position: relative;
+  margin-bottom: 20px;
+}
+
+.side.left-form form img:nth-child(1) {
+  left: 12px;
+  position: absolute;
+}
+
+.side.left-form form img:nth-child(3){
+  position: absolute;
+  right: 12px;
+  cursor: pointer;
+}
+
+.side.left-form form input {
+  width: 100%;
+  height: 44px;
+  
+  font: 400 14px 'Roboto';
+  color: var(--text-base);
+
+  border: 1px solid #868686;
+  border-radius: 4px;
+  padding: 0 40px;
+
+  background-color: transparent;
+}
+
+.side.left-form form label[for=check] {
+  font: 400 16px 'Roboto';
+}
+.side.left-form form input[type=checkbox] {
+  width: 20px;
+  border: 0;
+  vertical-align: middle;
+  font: 400 16px 'Roboto';
+  cursor: pointer;
+
+  accent-color: var(--primary-color);
+}
+
+.side.left-form form input[type=checkbox]:focus {
+  outline: 0;
+}
+
+.side.left-form form input::placeholder {
+  color: var(--text-base);
+  font: 400 14px 'Roboto';
+}
+
+.side.left-form form input:focus {
+  outline: 1px ridge var(--primary-color);
+  border-color: var(--primary-color);
+}
+
+.side.left-form form p.rec-pass {
+  width: 70%;
+  display: inline-block;
+  text-align: end;
+}
+
+.side.left-form form button {
+  display: block;
+  height: 50px;
+  width: 100%;
+  margin: 14px 0 20px;
+  border-radius: 4px;
+
+  font: 600 18px 'Poppins';
+  letter-spacing: 1.5%;
+  text-transform: uppercase;
+
+  background-color: var(--primary-color);
+  color: #473404;
+  
+  cursor: pointer;
+}
+
+.side.left-form .form-container p.register {
+  width: 100%;
+  text-align: center;
+
+  font: 400 14px 'Poppins';
+  color: var(--primary-color);
+}
+
+/* BACKGROUD  */
+
+.side.right-bg-image img {
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+}
+
+/* MOBILE */
+
+@media (max-width: 900px) {
+  main .side {
+    flex-basis: 100%;
+
+    background-color: #19181604;
+    height: 100vh;
+    width: 100vw;
+
+    align-items: center;
+  }
+
+  .side.left-form .form-container {
+    margin-top: 40px;
+  }
+
+  .side.right-bg-image {
+    position: absolute;
+
+    z-index: -1;
+  }
+}
+
+@media (max-width: 700px) {
+  html, body, main{
+    height: 100vh;
+  }
+
+  main .side {
+    background-color: var(--background);
+  }
+
+  .side.left-form nav.logo-up {
+    padding: 40px 20px 0;
+  }
+
+  .side.left-form {
+    height: auto;
+  }
+
+  .side.left-form .form-container {
+    margin: 0;
+    padding: 30px 20px 0;
+
+    background-color: var(--background);
+    box-shadow: 0 0 0 0;
+  }
+
+  .side.right-bg-image {
+    display: none;
+  }
 }

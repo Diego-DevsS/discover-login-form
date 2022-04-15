@@ -7,49 +7,57 @@
   <title>Login Form</title>
 
   <link rel="stylesheet" href="./style.css">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&family=Roboto:wght@400;500&display=swap" rel="stylesheet"> 
 </head>
 <body>
   <main>
-    <div class="left-form">
+    <section class="left-form side">
       <nav class="logo-up">
         <img src="./images/logo.svg" alt="logo-image-compin">
       </nav>
 
-      <section class="form">
-        <h3>
-          <img src="./images/log-in.svg" alt="login-icon"> Faça seu login
-        </h3>
-  
-        <p>Entre com suas informações de cadastro</p>
+      <section class="form-container">
+        <div class="title-description">
+          <img src="./images/log-in.svg" alt="login-icon">
+          <h3>Faça seu login</h3>
+          <p>Entre com suas informações de cadastro</p>
+        </div>
   
         <form>
             <label for="email">E-mail</label>
             <div class="board">
               <img src="./images/mail.svg" alt="mail-icon">
-              <input id="email" type="email">
+              <input id="email" type="email" placeholder="Digite seu e-mail">
             </div>
     
             <label for="pass">Senha</label>
             <div class="board">
               <img src="./images/lock.svg" alt="lock-icon">
-              <input id="pass" type="password">
+              <input id="pass" type="password" placeholder="Digite sua senha">
               <img src="./images/eye.svg" alt="eye-icon">
             </div>
     
-            <input type="checkbox" id="check">
-            <label for="check">Lembre-me</label>
-    
-            <a href="#">Esqueci minha senha</a>
+            <label for="check">
+              <input type="checkbox">
+              Lembre-me
+            </label>
+            
+            <p class="rec-pass">
+              <a href="#">Esqueci minha senha</a>
+            </p>
           
             <button type="submit">Entrar</button>
         </form>
-        <p>Não tem uma conta? <a href="#"><strong>Registre-se</strong></a></p>
+        <p class="register">Não tem uma conta? <a href="#"><strong>Registre-se</strong></a></p>
       </section>
-    </div>
+    </section>
 
-    <div class="right-bg-image">
-      <img src="./images/side-image-2x.jpg" alt="">
-    </div>
+    <section class="right-bg-image side">
+      <img src="./images/side-image.jpg" alt="side-background-image">
+    </section>
   </main>
 </body>
 </html>
