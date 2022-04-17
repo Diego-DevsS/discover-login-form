@@ -11,20 +11,23 @@
   --background: #191816;
   --form-background: #24221f;
   --primary-color: #ffc632;
+
+  --calc-img-logo: calc(auto + 60px);
 }
 
 html, body {
   width: 100vw;
-  height: 100vw;
-
   overflow: hidden;
+}
+
+html, body, main{
+  height: 100vh;
 }
 
 main {
   display: flex;
   height: 100vh;
 }
-
 
 /* FORM & BACKGROUND */
 
@@ -53,18 +56,19 @@ main .side {
 }
 
 .side.left-form .form-container {
-  width: 570px;
-  max-width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 
   height: auto;
 
   background-color: var(--form-background);
-  padding: 60px 80px 30px;
+  padding: 40px 80px;
   
   border-radius: 5px;
   box-shadow: 1px 1px 5px #0003;
 
-  margin-top: calc(10% - 40px);
+  margin: auto 20px;
 }
 
 .side.left-form .form-container .title-description img {
@@ -101,6 +105,10 @@ main .side {
 
   position: relative;
   margin-bottom: 20px;
+}
+
+.side.left-form form {
+  height: 100%;
 }
 
 .side.left-form form img:nth-child(1) {
@@ -198,6 +206,10 @@ main .side {
 /* MOBILE */
 
 @media (max-width: 900px) {
+  html, body, main{
+    height: 100vh;
+  }
+
   main .side {
     flex-basis: 100%;
 
@@ -209,7 +221,7 @@ main .side {
   }
 
   .side.left-form .form-container {
-    margin-top: 40px;
+    margin: auto auto;
   }
 
   .side.right-bg-image {
